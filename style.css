@@ -1,0 +1,74 @@
+.searchBtn {
+  height: 40px;
+  width: 35%;
+  border: none;
+  outline: none;
+  background-color: rgb(104, 135, 238);
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.searchBtn:hover {
+  background-color: rgb(125, 151, 238);
+}
+
+.myBtn {
+  font-size: 16px;
+  background-color: #999;
+  color: #ffffff;
+  border: 1px solid #000000;
+  width: 50%;
+  height: 65px;
+  border-radius: 14px;
+}
+
+.myBtn1 {
+  font-size: 16px;
+  background-color: #999;
+  color: #ffffff;
+  border: 1px solid #000000;
+  width: 60%;
+  height: 65px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.myBtn:hover,
+.myBtn1:hover {
+  background-color: #666;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .myBtn,
+  .myBtn1 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .myBtn,
+  .myBtn1 {
+    font-size: 24px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  background-color: #ffffff;
+}
+
+.top-right-link {
+  margin-right: 20px;
+  color: hsl(224, 100%, 50%);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-right-link:hover {
+  color: #19109b;
+}
