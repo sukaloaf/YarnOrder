@@ -1,14 +1,17 @@
 <?php
+
+date_default_timezone_set('America/New_York');
+
     session_start();
     $servername = "162.241.226.202"; 
     $username = "dtyarnor_user"; 
     $password = "4!RQm-XEsnT$:ka";  
     $dbname = "dtyarnor_yarnOrder";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-    }
 
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+    }
 
 if(isset($_POST['save']))
 {
@@ -19,6 +22,7 @@ if(isset($_POST['save']))
     $machine = $_POST['machine'];
     $sensor = $_POST['sensor'];
     $quantity = $_POST['quantity'];
+    $time = date('m/d/Y g:i A');
 
     foreach($weight as $index => $weights)
     {
@@ -31,8 +35,10 @@ if(isset($_POST['save']))
         $s_quantity = $quantity[$index];
 
         $set = mysqli_real_escape_string($conn, $_GET['set']);
-        $query = "INSERT INTO $set (weight,color,vendor,rws,machine,sensor,quantity) VALUES ('$s_weight', '$s_color', '$s_vendor', '$s_rws', '$s_machine', '$s_sensor', '$s_quantity')";
+
+        $query = "INSERT INTO $set (weight,color,vendor,rws,machine,sensor,quantity,time) VALUES ('$s_weight', '$s_color', '$s_vendor', '$s_rws', '$s_machine', '$s_sensor', '$s_quantity', '$time')";
         $query_run = mysqli_query($conn, $query);
+
     }
 
     if($query_run)

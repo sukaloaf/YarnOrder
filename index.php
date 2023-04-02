@@ -25,7 +25,7 @@
                         }
                         else {
                             echo '
-                            <a class="top-right-link" href="./login.php">Login</a>';
+                            <a class="top-right-link" href="./login.php"></a>';
                         }
                     ?>
     </header>

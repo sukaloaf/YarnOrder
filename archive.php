@@ -3,7 +3,7 @@
     $servername = "162.241.226.202"; 
     $username = "dtyarnor_user"; 
     $password = "4!RQm-XEsnT$:ka";  
-    $dbname = "dtyarnor_yarnOrder";
+    $dbname = "dtyarnor_archive";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     $output = "";
@@ -26,14 +26,7 @@
             <td>".$row['sensor']."</td>
             <td>".$row['quantity']."</td>
             <td>".$row['time']."</td>
-            <td>
-                <form method='post' action='receiveDelete.php'>
-                    <input type='hidden' name='row_id' value='" . $row['id'] . "'>
-                    <input type='hidden' name='table_name' value='$set'>
-                    <button type='submit' class='remove-btn btn btn-danger'>Delete</button>
-                </form>
-            </td>
-
+            <td>".$row['delivered']."</td>
             </tr>
             ";
                 }      
@@ -54,33 +47,17 @@ mysqli_close($conn);
 
 <body>
     <div class="title text-center">
-        <h1><?php echo "$set" ?> Yarn Order</h1>
+        <h1><?php echo "$set" ?> Archive</h1>
     </div>
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item ms-3"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="receiveMenu.php">Receiving</a>
+                <li class="breadcrumb-item"><a href="archiveMenu.php">Archive</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo "$set" ?> Order</li>
+                <li class="breadcrumb-item active" aria-current="page"><?php echo "$set" ?> Archive</li>
             </ol>
         </nav>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-
-                <?php 
-                    if(isset($_SESSION['status1']))
-                    {
-                        ?>
-                <h4 class="alert alert-success"><?php echo $_SESSION['status1']; ?></h4>
-                <?php
-                        unset($_SESSION['status1']);
-                    }
-                ?>
-            </div>
-        </div>
     </div>
     <div class="container d-flex justify-content-center">
         <div class="col">
@@ -93,8 +70,8 @@ mysqli_close($conn);
                     <th>Machine</th>
                     <th>Sensor</th>
                     <th>Quantity</th>
-                    <th>Time</th>
-                    <th>Action</th>
+                    <th>Received</th>
+                    <th>Delivered</th>
                 </tr>
                 <div class='row'>
                     <?php     
@@ -103,11 +80,6 @@ mysqli_close($conn);
                 </div>
             </table>
         </div>
-    </div>
-    <div class="container d-flex justify-content-center">
-        <form action="delete.php?set=<?php echo "$set" ?>" method="POST">
-            <button type="submit" name="delet" class="btn btn-success">Delivered/Delete All</button>
-        </form>
     </div>
 </body>
 

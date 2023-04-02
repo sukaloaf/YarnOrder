@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <header><a class="top-right-link" href="archiveMenu.php">Archive</a></header>
     <div class="title text-center">
         <h1>Receiving</h1>
     </div>

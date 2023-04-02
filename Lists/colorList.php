@@ -7,7 +7,7 @@ $dbname = "dtyarnor_lists";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-$sql = "SELECT colorName FROM color";
+$sql = "SELECT colorName FROM color ORDER BY `colorName` ASC";
 $result = mysqli_query($conn, $sql);
 
 while ($row = mysqli_fetch_assoc($result)) {

@@ -7,7 +7,7 @@ $dbname = "dtyarnor_lists";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-$sql = "SELECT weightName FROM wweight";
+$sql = "SELECT weightName FROM wweight ORDER BY `weightName` ASC";
 $result = mysqli_query($conn, $sql);
 
 while ($row = mysqli_fetch_assoc($result)) {

@@ -7,7 +7,7 @@ $dbname = "dtyarnor_lists";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-$sql = "SELECT vendorName FROM vendor";
+$sql = "SELECT vendorName FROM vendor ORDER BY `vendorName` ASC";
 $result = mysqli_query($conn, $sql);
 
 while ($row = mysqli_fetch_assoc($result)) {

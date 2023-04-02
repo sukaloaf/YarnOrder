@@ -66,8 +66,8 @@ mysqli_close($conn);
                         <!-- POST to code.php -->
                         <form action="code.php?set=<?php echo "$set" ?>" method="POST">
                             <div class="main-form mt-3 border bottom">
-                                <div class="row">
-                                    <div class="col">
+                                <div class="row justify-content-center">
+                                    <div class="col-4 col-md-2">
                                         <div class="form-group mb-2 ps-1">
                                             <label for="">Weight</label>
                                             <input type="text" name="weight[]" maxlength="10" class="form-control"
@@ -79,7 +79,7 @@ mysqli_close($conn);
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-8 col-md-2">
                                         <div class="form-group mb-2">
                                             <label for="">Color</label>
                                             <input type="text" name="color[]" maxlength="50" class="form-control"
@@ -91,7 +91,7 @@ mysqli_close($conn);
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4 col-md-2">
                                         <div class="form-group mb-2">
                                             <label for="">Vendor</label>
                                             <input type="text" name="vendor[]" maxlength="50" class="form-control"
@@ -103,7 +103,7 @@ mysqli_close($conn);
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4 col-md-1">
                                         <div class="form-group mb-2">
                                             <label for="">RWS</label>
                                             <input type="text" name="rws[]" maxlength="3" class="form-control"
@@ -114,10 +114,10 @@ mysqli_close($conn);
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4 col-md-1">
                                         <div class="form-group mb-2">
                                             <label for="">Machine</label>
-                                            <input type="text" name="machine[]" maxlength="5" class="form-control"
+                                            <input type="text" name="machine[]" maxlength="50" class="form-control"
                                                 required placeholer="Machine" list="machineList">
                                             <datalist id="machineList">
                                                 <option value="01" />
@@ -168,10 +168,10 @@ mysqli_close($conn);
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4 col-md-1">
                                         <div class="form-group mb-2">
                                             <label for="">Sensor</label>
-                                            <input type="text" name="sensor[]" maxlength="5" class="form-control"
+                                            <input type="text" name="sensor[]" maxlength="50" class="form-control"
                                                 placeholer="Sensor" list="sensorList">
                                             <datalist id="sensorList">
                                                 <option value="01" />
@@ -201,10 +201,11 @@ mysqli_close($conn);
                                                 <option value="25" />
                                                 <option value="26" />
                                                 <option value="27" />
+                                                <option value="Toe Seamer" />
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4 col-md-1">
                                         <div class="form-group mb-2">
                                             <label for="">Quantity</label>
                                             <input type="number" name="quantity[]" min="0" max="99" class="form-control"
@@ -223,7 +224,7 @@ mysqli_close($conn);
                                             </datalist>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-4 col-md-1">
                                         <div class="form-group mb-2 pe-1">
                                             <br>
                                             <button type="button" class="remove-btn btn btn-danger">Remove</button>
@@ -235,6 +236,10 @@ mysqli_close($conn);
                             <div class="paste-new-forms"></div>
 
                             <button type="submit" name="save" class="btn btn-success mt-2">Submit</button>
+                            
+                            <h4>
+                            <a href="javascript:void(0)" class="add-more-form float-end btn btn-primary">Add More</a>
+                            </h4>
                         </form>
                     </div>
                 </div>
@@ -257,18 +262,18 @@ mysqli_close($conn);
             '.add-more-form',
             function() {
                 $('.paste-new-forms').append('<div class="main-form mt-3 border bottom">\
-                                <div class="row">\
-                                    <div class="col">\
+                                <div class="row justify-content-center">\
+                                    <div class="col-4 col-md-2">\
                                         <div class="form-group mb-2">\
                                             <label for="">Weight</label>\
-                                            <input type="text" name="weight[]" maxlength="5" class="form-control" required\
+                                            <input type="text" name="weight[]" maxlength="10" class="form-control" required\
                                                 placeholer="Weight" list="weightList">\
                                                 <datalist id="weightList">\
                                                 <?php  include './Lists/weightList.php'; ?>\
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-8 col-md-2">\
                                         <div class="form-group mb-2">\
                                             <label for="">Color</label>\
                                             <input type="text" name="color[]" maxlength="50" class="form-control" required\
@@ -278,7 +283,7 @@ mysqli_close($conn);
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-4 col-md-2">\
                                         <div class="form-group mb-2">\
                                             <label for="">Vendor</label>\
                                             <input type="text" name="vendor[]" maxlength="50" class="form-control" required\
@@ -288,7 +293,7 @@ mysqli_close($conn);
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-4 col-md-1">\
                                         <div class="form-group mb-2">\
                                             <label for="">RWS</label>\
                                             <input type="text" name="rws[]" maxlength="3" class="form-control" placeholer="RWS" list="rwsList">\
@@ -298,10 +303,10 @@ mysqli_close($conn);
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-4 col-md-1">\
                                         <div class="form-group mb-2">\
                                             <label for="">Machine</label>\
-                                            <input type="text" name="machine[]" maxlength="5" class="form-control" required\
+                                            <input type="text" name="machine[]" maxlength="50" class="form-control" required\
                                                 placeholer="Machine" list="machineList">\
                                                 <datalist id="machineList">\
                                                 <option value="01" />\
@@ -352,10 +357,10 @@ mysqli_close($conn);
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-4 col-md-1">\
                                         <div class="form-group mb-2">\
                                             <label for="">Sensor</label>\
-                                            <input type="text" name="sensor[]" maxlength="5" class="form-control" placeholer="Sensor" list="sensorList">\
+                                            <input type="text" name="sensor[]" maxlength="50" class="form-control" placeholer="Sensor" list="sensorList">\
                                             <datalist id="sensorList">\
                                                 <option value="01" />\
                                                 <option value="02" />\
@@ -384,10 +389,11 @@ mysqli_close($conn);
                                                 <option value="25" />\
                                                 <option value="26" />\
                                                 <option value="27" />\
+                                                <option value="Toe Seamer" />\
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-4 col-md-1">\
                                         <div class="form-group mb-2">\
                                             <label for="">Quantity</label>\
                                             <input type="number" name="quantity[]" max="99" class="form-control" required\
@@ -406,7 +412,7 @@ mysqli_close($conn);
                                             </datalist>\
                                         </div>\
                                     </div>\
-                                    <div class="col">\
+                                    <div class="col-4 col-md-1">\
                                         <div class="form-group mb-2">\
                                             <br>\
                                             <button type="button" class="remove-btn btn btn-danger">Remove</button>\
