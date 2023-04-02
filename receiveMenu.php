@@ -143,273 +143,330 @@
             </div>
         </div>
     </div>
+    <!-- Audio element for notification sound -->
+    <audio id="notification-sound" src="notification.mp3"></audio>
+    <!-- Script Start -->
+    <script>
+    // Create new audio element
+    const notificationSound = new Audio("notification.mp3");
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=A0");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("a0_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=B0");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("b0_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=C0");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("c0_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=D0");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("d0_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=E0");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("e0_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=A1");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("a1_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=A2");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("a2_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=B1");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("b1_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=B2");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("b2_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=C2");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("c2_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+
+    <script>
+    // Update the notification badge using fetch() every 5 seconds
+    setInterval(async function() {
+        try {
+            const response = await fetch("data.php?set=D2");
+            if (response.ok) {
+                // Update the notification count and the badge
+                notificationCount = await response.text();
+                const badgeElement = document.getElementById("d2_noti");
+                if (notificationCount >= 1) {
+                    // If notification count is greater than or equal to 1, update badge and play sound
+                    badgeElement.textContent = notificationCount;
+                    badgeElement.style.display = "block";
+                    notificationSound.play();
+                } else {
+                    badgeElement.style.display = "none";
+                }
+            } else {
+                // An error occurred, display an error message
+                console.error(
+                    "Error updating notification badge: " + response.statusText
+                );
+            }
+        } catch (error) {
+            console.error("Error updating notification badge: " + error);
+        }
+    }, 1000); // Update every 1 second
+    </script>
+    <!-- Script End -->
 </body>
 
 </html>
-<!-- Script Start -->
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=A0");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("a0_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=B0");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("b0_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=C0");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("c0_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=D0");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("d0_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=E0");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("e0_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=A1");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("a1_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=A2");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("a2_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=B1");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("b1_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=B2");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("b2_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=C2");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("c2_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-
-<script>
-setInterval(async function() {
-    try {
-        const response = await fetch("data.php?set=D2");
-        if (response.ok) {
-            notificationCount = await response.text();
-            const badgeElement = document.getElementById("d2_noti");
-            if (notificationCount > 0) {
-                badgeElement.textContent = notificationCount;
-                badgeElement.style.display = "block";
-            } else {
-                badgeElement.style.display = "none";
-            }
-        } else {
-            console.error(
-                "Error updating notification badge: " + response.statusText
-            );
-        }
-    } catch (error) {
-        console.error("Error updating notification badge: " + error);
-    }
-}, 1000);
-</script>
-<!-- Script End -->
