@@ -10,7 +10,7 @@
 
     $set = htmlspecialchars($_GET['set']);
 
-    $query = "SELECT * FROM $set ORDER BY `weight` ASC";
+    $query = "SELECT * FROM $set ORDER BY `delivered` ASC";
 
     $res = mysqli_query($conn,$query);
 
