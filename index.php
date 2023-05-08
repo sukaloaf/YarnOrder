@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,18 +16,17 @@
 
 <body>
     <header>
-        <?php 
-                        if (isset($_SESSION["usersemail"])) {
-                            echo '
+        <?php
+        if (isset($_SESSION["usersemail"])) {
+            echo '
                             <a class="top-right-link" href="Menus/itemMenu.php">Manage Items</a>';
-                            echo '
+            echo '
                             <a class="top-right-link" href="includes/logout.inc.php">Logout</a>';
-                        }
-                        else {
-                            echo '
+        } else {
+            echo '
                             <a class="top-right-link" href="./login.php"></a>';
-                        }
-                    ?>
+        }
+        ?>
     </header>
     <div class="text-center mt-4">
         <h1>Darn Tough Yarn Order Center</h1>

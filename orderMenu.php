@@ -28,75 +28,75 @@
     <!-- Set Select Start -->
     <div class="container text-center mt-5">
         <div class="row d-flex justify-content-evenly mt-5">
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=A0">
                     <button type="button" class="myBtn1">A0</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=B0">
                     <button type="button" class="myBtn1">B0</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=C0">
                     <button type="button" class="myBtn1">C0</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=D0">
                     <button type="button" class="myBtn1">D0</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=E0">
                     <button type="button" class="myBtn1">E0</button>
                 </a>
             </div>
         </div>
         <div class="row d-flex justify-content-evenly mt-5">
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=A1">
                     <button type="button" class="myBtn1">A1</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=B1">
                     <button type="button" class="myBtn1">B1</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
 
             </div>
-            <div class="col">
+            <div class="col-2">
 
             </div>
-            <div class="col">
+            <div class="col-2">
 
             </div>
         </div>
         <div class="row justify-content-evenly mt-5">
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=A2">
                     <button type="button" class="myBtn1">A2</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=B2">
                     <button type="button" class="myBtn1">B2</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=C2">
                     <button type="button" class="myBtn1">C2</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <a href="order.php?set=D2">
                     <button type="button" class="myBtn1">D2</button>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
 
             </div>
         </div>

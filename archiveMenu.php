@@ -20,12 +20,15 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item ms-3"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="receiveMenu.php">Receiving</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page">Archive</li>
             </ol>
         </nav>
     </div>
     <!-- Breadcrumb Finish -->
     <!-- Set Select Start -->
+    <!-- Empty divs are to prevent formatting errors -->
     <div class="container text-center mt-5">
         <div class="row d-flex justify-content-evenly mt-5">
             <div class="col">

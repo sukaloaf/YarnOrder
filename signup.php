@@ -35,32 +35,28 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <?php 
-        if(isset($_GET["error"])) {
-            if($_GET["error"] == "emptyinput") {
-                echo "<p>Please fill in all fields!</p>";
+            <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyinput") {
+                    echo "<p>Please fill in all fields!</p>";
+                } else if ($_GET["error"] == "invalidemail") {
+                    echo "<p>Please use a valide email! (example: 'abc@123.com')</p>";
+                } else if ($_GET["error"] == "emailtaken") {
+                    echo "<p>Email is already in use. Please enter a different email.</p>";
+                } else if ($_GET["error"] == "stmtfailed") {
+                    echo "<p>Something went wrong. Please try again.</p>";
+                } else if ($_GET["error"] == "none") {
+                    echo "<p>Sign up successful!</p>";
+                }
             }
-            else if ($_GET["error"] == "invalidemail") {
-                echo "<p>Please use a valide email! (example: 'abc@123.com')</p>";
-            }
-            else if ($_GET["error"] == "emailtaken") {
-                echo "<p>Email is already in use. Please enter a different email.</p>";
-            }
-            else if ($_GET["error"] == "stmtfailed") {
-                echo "<p>Something went wrong. Please try again.</p>";
-            }
-            else if ($_GET["error"] == "none") {
-                echo "<p>Sign up successful!</p>";
-            }
-        }
-    ?>
+            ?>
 
         </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>

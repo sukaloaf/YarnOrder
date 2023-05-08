@@ -1,31 +1,32 @@
 <?php
-    session_start();
-    $servername = "162.241.226.202"; 
-    $username = "dtyarnor_user"; 
-    $password = "4!RQm-XEsnT$:ka";  
-    $dbname = "dtyarnor_yarnOrder";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+session_start();
+$servername = "162.241.226.202";
+$username = "dtyarnor_user";
+$password = "4!RQm-XEsnT$:ka";
+$dbname = "dtyarnor_yarnOrder";
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    $output = "";
+$output = "";
 
-    $set = htmlspecialchars($_GET['set']);
+$set = htmlspecialchars($_GET['set']);
 
-    $query = "SELECT * FROM $set ORDER BY `weight` ASC";
+$query = "SELECT * FROM $set ORDER BY `weight` ASC";
 
-    $res = mysqli_query($conn,$query);
+$res = mysqli_query($conn, $query);
 
-    while ($row = mysqli_fetch_array($res)) {
-                           
-        $output .="
+while ($row = mysqli_fetch_array($res)) {
+
+    $output .= "
             <tr>
-            <td>".$row['weight']."</td>
-            <td>".$row['color']."</td>
-            <td>".$row['vendor']."</td>
-            <td>".$row['rws']."</td>
-            <td>".$row['machine']."</td>
-            <td>".$row['sensor']."</td>
-            <td>".$row['quantity']."</td>
-            <td>".$row['time']."</td>
+            <td>" . $row['weight'] . "</td>
+            <td>" . $row['color'] . "</td>
+            <td>" . $row['vendor'] . "</td>
+            <td>" . $row['rws'] . "</td>
+            <td>" . $row['machine'] . "</td>
+            <td>" . $row['sensor'] . "</td>
+            <td>" . $row['quantity'] . "</td>
+            <td>" . $row['time'] . "</td>
+            <td>" . $row['name'] . "</td>
             <td>
                 <form method='post' action='receiveDelete.php'>
                     <input type='hidden' name='row_id' value='" . $row['id'] . "'>
@@ -36,7 +37,7 @@
 
             </tr>
             ";
-                }      
+}
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -54,7 +55,9 @@ mysqli_close($conn);
 
 <body>
     <div class="title text-center">
-        <h1><?php echo "$set" ?> Yarn Order</h1>
+        <h1>
+            <?php echo "$set" ?> Yarn Order
+        </h1>
     </div>
     <div class="container">
         <nav aria-label="breadcrumb">
@@ -62,7 +65,9 @@ mysqli_close($conn);
                 <li class="breadcrumb-item ms-3"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item"><a href="receiveMenu.php">Receiving</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo "$set" ?> Order</li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <?php echo "$set" ?> Order
+                </li>
             </ol>
         </nav>
     </div>
@@ -70,14 +75,15 @@ mysqli_close($conn);
         <div class="row">
             <div class="col-md-12">
 
-                <?php 
-                    if(isset($_SESSION['status1']))
-                    {
-                        ?>
-                <h4 class="alert alert-success"><?php echo $_SESSION['status1']; ?></h4>
                 <?php
-                        unset($_SESSION['status1']);
-                    }
+                if (isset($_SESSION['status1'])) {
+                    ?>
+                    <h4 class="alert alert-success">
+                        <?php echo $_SESSION['status1']; ?>
+                    </h4>
+                    <?php
+                    unset($_SESSION['status1']);
+                }
                 ?>
             </div>
         </div>
@@ -94,12 +100,13 @@ mysqli_close($conn);
                     <th>Sensor</th>
                     <th>Quantity</th>
                     <th>Time</th>
+                    <th>Name</th>
                     <th>Action</th>
                 </tr>
                 <div class='row'>
-                    <?php     
-        echo $output;
-        ?>
+                    <?php
+                    echo $output;
+                    ?>
                 </div>
             </table>
         </div>

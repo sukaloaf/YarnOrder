@@ -1,17 +1,17 @@
 <?php
-    session_start();
+session_start();
 
-    $servername = "162.241.226.202"; 
-    $username = "dtyarnor_user"; 
-    $password = "4!RQm-XEsnT$:ka";  
-    $dbname = "dtyarnor_yarnOrder";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-    }
+$servername = "162.241.226.202";
+$username = "dtyarnor_user";
+$password = "4!RQm-XEsnT$:ka";
+$dbname = "dtyarnor_yarnOrder";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    $set = htmlspecialchars($_GET['set']);
-              
+$set = htmlspecialchars($_GET['set']);
+
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -36,7 +36,9 @@ mysqli_close($conn);
                 <li class="breadcrumb-item ms-3"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item"><a href="orderMenu.php">Ordering</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo "$set" ?> Order</li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <?php echo "$set" ?> Order
+                </li>
             </ol>
         </nav>
     </div>
@@ -46,25 +48,34 @@ mysqli_close($conn);
         <div class="row">
             <div class="col-12">
                 <!-- Session Start -->
-                <?php 
-                    if(isset($_SESSION['status']))
-                    {
-                        ?>
-                <h4 class="alert alert-success"><?php echo $_SESSION['status']; ?></h4>
                 <?php
-                        unset($_SESSION['status']);
-                    }
+                if (isset($_SESSION['status'])) {
+                    ?>
+                    <h4 class="alert alert-success">
+                        <?php echo $_SESSION['status']; ?>
+                    </h4>
+                    <?php
+                    unset($_SESSION['status']);
+                }
                 ?>
                 <!-- Session End -->
                 <div class="card mt-4">
                     <div class="card-header">
-                        <h4><?php echo "$set" ?> Order Form
+                        <h4>
+                            <?php echo "$set" ?> Order Form
                             <a href="javascript:void(0)" class="add-more-form float-end btn btn-primary">Add More</a>
                         </h4>
                     </div>
                     <div class="card-body">
                         <!-- POST to code.php -->
                         <form action="code.php?set=<?php echo "$set" ?>" method="POST">
+                            <div class="row justify-content-start form-inline">
+                                <div class="col-12 col-md-4" style="display: inline-flex;">
+                                    <label for="" class="me-2">Name</label>
+                                    <input type="text" name="name" maxlength="50" class="form-control" required
+                                        placeholer="Name">
+                                </div>
+                            </div>
                             <div class="main-form mt-3 border bottom">
                                 <div class="row justify-content-center">
                                     <div class="col-4 col-md-2">
@@ -73,8 +84,8 @@ mysqli_close($conn);
                                             <input type="text" name="weight[]" maxlength="10" class="form-control"
                                                 required placeholer="Weight" list="weightList">
                                             <datalist id="weightList">
-                                                <?php 
-                                                    include './Lists/weightList.php';
+                                                <?php
+                                                include './Lists/weightList.php';
                                                 ?>
                                             </datalist>
                                         </div>
@@ -85,8 +96,8 @@ mysqli_close($conn);
                                             <input type="text" name="color[]" maxlength="50" class="form-control"
                                                 required placeholer="Color" list="colorList">
                                             <datalist id="colorList">
-                                                <?php 
-                                                    include './Lists/colorList.php';
+                                                <?php
+                                                include './Lists/colorList.php';
                                                 ?>
                                             </datalist>
                                         </div>
@@ -97,8 +108,8 @@ mysqli_close($conn);
                                             <input type="text" name="vendor[]" maxlength="50" class="form-control"
                                                 required placeholer="Vendor" list="vendorList">
                                             <datalist id="vendorList">
-                                                <?php 
-                                                    include './Lists/vendorList.php';
+                                                <?php
+                                                include './Lists/vendorList.php';
                                                 ?>
                                             </datalist>
                                         </div>
@@ -236,9 +247,10 @@ mysqli_close($conn);
                             <div class="paste-new-forms"></div>
 
                             <button type="submit" name="save" class="btn btn-success mt-2">Submit</button>
-                            
+
                             <h4>
-                            <a href="javascript:void(0)" class="add-more-form float-end btn btn-primary">Add More</a>
+                                <a href="javascript:void(0)" class="add-more-form float-end btn btn-primary">Add
+                                    More</a>
                             </h4>
                         </form>
                     </div>
@@ -252,16 +264,16 @@ mysqli_close($conn);
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
     <script>
-    $(document).ready(function() {
+        $(document).ready(function () {
 
-        $(document).on('click', '.remove-btn', function() {
-            $(this).closest('.main-form').remove();
-        });
+            $(document).on('click', '.remove-btn', function () {
+                $(this).closest('.main-form').remove();
+            });
 
-        $(document).on('click',
-            '.add-more-form',
-            function() {
-                $('.paste-new-forms').append('<div class="main-form mt-3 border bottom">\
+            $(document).on('click',
+                '.add-more-form',
+                function () {
+                    $('.paste-new-forms').append('<div class="main-form mt-3 border bottom">\
                                 <div class="row justify-content-center">\
                                     <div class="col-4 col-md-2">\
                                         <div class="form-group mb-2">\
@@ -269,7 +281,7 @@ mysqli_close($conn);
                                             <input type="text" name="weight[]" maxlength="10" class="form-control" required\
                                                 placeholer="Weight" list="weightList">\
                                                 <datalist id="weightList">\
-                                                <?php  include './Lists/weightList.php'; ?>\
+                                                <?php include './Lists/weightList.php'; ?>\
                                             </datalist>\
                                         </div>\
                                     </div>\
@@ -420,8 +432,8 @@ mysqli_close($conn);
                                     </div>\
                                 </div>\
                             </div>');
-            });
-    });
+                });
+        });
     </script>
     <!-- JQuery Script End -->
 

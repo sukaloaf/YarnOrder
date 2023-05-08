@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,16 +43,15 @@
                         </form>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <?php 
-        if(isset($_GET["error"])) {
-            if($_GET["error"] == "emptyinput") {
-                echo "<p>Please fill in all fields!</p>";
-            }
-            else if ($_GET["error"] == "wronglogin") {
-                echo "<p>Incorrect login information. Please try again.</p>";
-            }
-        }
-    ?>
+                        <?php
+                        if (isset($_GET["error"])) {
+                            if ($_GET["error"] == "emptyinput") {
+                                echo "<p>Please fill in all fields!</p>";
+                            } else if ($_GET["error"] == "wronglogin") {
+                                echo "<p>Incorrect login information. Please try again.</p>";
+                            }
+                        }
+                        ?>
 
                     </div>
                 </div>

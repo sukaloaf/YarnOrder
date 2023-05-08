@@ -2,19 +2,20 @@
 
 date_default_timezone_set('America/New_York');
 
-    session_start();
-    $servername = "162.241.226.202"; 
-    $username = "dtyarnor_user"; 
-    $password = "4!RQm-XEsnT$:ka";  
-    $dbname = "dtyarnor_yarnOrder";
+//Connect to database
+session_start();
+$servername = "162.241.226.202";
+$username = "dtyarnor_user";
+$password = "4!RQm-XEsnT$:ka";
+$dbname = "dtyarnor_yarnOrder";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-    }
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-if(isset($_POST['save']))
-{
+if (isset($_POST['save'])) {
+    $name = $_POST['name'];
     $weight = $_POST['weight'];
     $color = $_POST['color'];
     $vendor = $_POST['vendor'];
@@ -24,8 +25,7 @@ if(isset($_POST['save']))
     $quantity = $_POST['quantity'];
     $time = date('m/d/Y g:i A');
 
-    foreach($weight as $index => $weights)
-    {
+    foreach ($weight as $index => $weights) {
         $s_weight = $weights;
         $s_color = $color[$index];
         $s_vendor = $vendor[$index];
@@ -36,21 +36,18 @@ if(isset($_POST['save']))
 
         $set = mysqli_real_escape_string($conn, $_GET['set']);
 
-        $query = "INSERT INTO $set (weight,color,vendor,rws,machine,sensor,quantity,time) VALUES ('$s_weight', '$s_color', '$s_vendor', '$s_rws', '$s_machine', '$s_sensor', '$s_quantity', '$time')";
+        $query = "INSERT INTO $set (name,weight,color,vendor,rws,machine,sensor,quantity,time) VALUES ('$name','$s_weight', '$s_color', '$s_vendor', '$s_rws', '$s_machine', '$s_sensor', '$s_quantity', '$time')";
         $query_run = mysqli_query($conn, $query);
 
     }
 
-    if($query_run)
-    {
+    if ($query_run) {
         $_SESSION['status'] = "Submitted Successfully";
         header("Location: order.php?set=$set");
-exit(0);
-}
-else
-{
-$_SESSION['status'] = "Data Not Inserted. Please Go Back To Prevent Errors";
-header("Location: order.php?set=$set");
-exit(0);
-}
+        exit(0);
+    } else {
+        $_SESSION['status'] = "Data Not Inserted. Please Go Back To Prevent Errors";
+        header("Location: order.php?set=$set");
+        exit(0);
+    }
 }
